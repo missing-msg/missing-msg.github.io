@@ -7,8 +7,11 @@ function activateGallery(){
     let description = galleryInfo.querySelector(".description");
 
     thumbnails.forEach(function(thumbnail){
+        let newImageSrc = thumbnail.dataset.largeVersion;
+        let largeVersion = new Image();
+        largeVersion.src = newImageSrc;
+
         thumbnail.addEventListener("click", function(){
-            let newImageSrc = thumbnail.dataset.largeVersion;
             mainImage.setAttribute("src", newImageSrc);
             mainImage.setAttribute("alt", thumbnail.alt);
 
